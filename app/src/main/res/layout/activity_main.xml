@@ -43,7 +43,7 @@
         app:tabIndicatorColor="#000000"
         app:tabIndicatorHeight="3.5dp"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/white"
+        app:tabSelectedTextColor="@color/bluegrey"
         app:tabTextColor="@color/neon2">
 
         <com.google.android.material.tabs.TabItem
@@ -86,7 +86,7 @@
     </com.google.android.material.tabs.TabLayout>
 
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="0dp"

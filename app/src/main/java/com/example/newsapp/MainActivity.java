@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
@@ -17,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     TabItem tabHome,tabScience,tabHealth, tabTechnology,tabEntertainment,tabSports;
     PagerAdapter pagerAdapter;
-    Toolbar toolbar;
+//    Toolbar toolbar;
     ViewPager viewPager2;
+    SearchView searchView;
 
     String api = "be1902a8ea584d5a80131cb5f2fac899";
 
@@ -27,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         tabHome = findViewById(R.id.home);
         tabScience = findViewById(R.id.science);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         tabEntertainment = findViewById(R.id.entertainment);
         tabSports = findViewById(R.id.sports);
 
-
+        searchView = findViewById(R.id.search_view);
 
         tabLayout = findViewById(R.id.include);
         viewPager2 = findViewById(R.id.fragmentcontainer);
@@ -69,6 +72,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         viewPager2.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
+        //searchView
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                viewPager2.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
 
     }
 }

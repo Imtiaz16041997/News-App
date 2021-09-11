@@ -7,37 +7,62 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="0dp"
-        android:background="@color/Fadewhite"
-        android:id="@+id/toolbar"
-        >
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        app:cardElevation="8dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="312dp"
+            android:layout_height="?attr/actionBarSize"
+            app:defaultQueryHint="Search News..."
+            app:iconifiedByDefault="false"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Search">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="News"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/darkgrey"
-            />
+        </androidx.appcompat.widget.SearchView>
 
-    </LinearLayout>
 
-</androidx.appcompat.widget.Toolbar>
+    </androidx.cardview.widget.CardView>
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:background="@color/Fadewhite"-->
+<!--        android:id="@+id/toolbar"-->
+<!--        >-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center_vertical">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="NEWS"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="20sp"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/darkgrey"-->
+<!--            />-->
+
+<!--    </LinearLayout>-->
+
+<!--</androidx.appcompat.widget.Toolbar>-->
+
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/include"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
+        android:layout_margin="14dp"
         android:backgroundTint="@color/white"
         app:tabIndicator="@color/black"
         app:tabIndicatorColor="#000000"
@@ -87,11 +112,15 @@
 
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragmentcontainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:id="@+id/fragmentcontainer"
-        />
+        android:layout_margin="5dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
 
 
 </LinearLayout>

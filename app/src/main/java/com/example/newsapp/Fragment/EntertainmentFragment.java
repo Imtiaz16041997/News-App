@@ -29,7 +29,7 @@ public class EntertainmentFragment extends Fragment {
     String api = "be1902a8ea584d5a80131cb5f2fac899";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
-    String country = "in";
+    String country = "us";
     private RecyclerView recyclerViewofentertainment;
     private String category = "entertainment";
     @Override
